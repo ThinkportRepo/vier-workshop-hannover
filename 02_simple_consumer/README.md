@@ -36,7 +36,7 @@ java -jar target/grenke-workshop-basic-consumer.jar
         for (ConsumerRecord<String, String> consumerRecord : result) {
             System.out.println(consumerRecord);
             offsetAndMetadataMap.put(new TopicPartition(consumerRecord.topic(), consumerRecord.partition()),
-                    new OffsetAndMetadata(consumerRecord.offset()));
+                    new OffsetAndMetadata(consumerRecord.offset() + 1));
             consumer.commitSync(offsetAndMetadataMap);
         }
     }
@@ -51,7 +51,7 @@ java -jar target/grenke-workshop-basic-consumer.jar
         for (ConsumerRecord<String, String> consumerRecord : result) {
             System.out.println(consumerRecord);
             offsetAndMetadataMap.put(new TopicPartition(consumerRecord.topic(), consumerRecord.partition()),
-                    new OffsetAndMetadata(consumerRecord.offset()));
+                    new OffsetAndMetadata(consumerRecord.offset() + 1));
             consumer.commitAsync(offsetAndMetadataMap,
                     (offsets, exception) -> {System.out.printf("Callback, offset: %s, exception %s%n", offsets, exception)}
                     );
