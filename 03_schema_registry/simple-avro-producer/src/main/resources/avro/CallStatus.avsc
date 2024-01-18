@@ -1,0 +1,37 @@
+{
+  "type": "record",
+  "name": "CallStatus",
+  "namespace": "digital.thinkport",
+  "fields": [
+    {
+      "name": "callId",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "participants",
+      "type": {
+        "type": "array",
+        "items": "string",
+        "default": {}
+      }
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "Status",
+        "symbols": [
+          "UNKNOWN",
+          "FAILED",
+          "STARTED",
+          "ENDED"
+        ]
+      },
+      "default": "UNKNOWN"
+    }
+  ]
+}

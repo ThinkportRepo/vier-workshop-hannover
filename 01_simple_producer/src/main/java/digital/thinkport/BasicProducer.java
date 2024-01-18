@@ -17,7 +17,7 @@ public class BasicProducer {
 
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
         String callEvent = "CallId:" + callId + ";Customer:" + customer + ";Event: Call started";
-        producer.send(new ProducerRecord<>("call.service.data.0",callEvent));
+        producer.send(new ProducerRecord<>("services.call.status.0",callEvent));
 
         producer.flush();
         producer.close();
