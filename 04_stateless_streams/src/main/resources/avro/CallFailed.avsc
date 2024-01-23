@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "CallFailed",
+  "namespace": "digital.thinkport",
+  "fields": [
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "participants",
+      "type": {
+        "type": "array",
+        "items": "string",
+        "default": {}
+      }
+    },
+    {
+      "name": "error",
+      "type": "string"
+    }
+  ]
+}

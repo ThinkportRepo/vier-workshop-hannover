@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "CallStarted",
+  "namespace": "digital.thinkport",
+  "fields": [
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "participants",
+      "type": {
+        "type": "array",
+        "items": "string",
+        "default": {}
+      }
+    }
+  ]
+}
